@@ -10,7 +10,7 @@ export default async function Home() {
   const aboutSectionData = await extractAllData("about");
   const experieanceSectionData = await extractAllData("experience");
   const educationSectionData = await extractAllData("education");
-  const projectSectionData = await extractAllData("project");
+  const projectSectionData = await extractAllData("project");  
 
   return (
     <div className="Home">
