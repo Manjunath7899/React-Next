@@ -70,12 +70,12 @@ const AdminView = () => {
     initialProjectViewFormData
   );
 
-  const [allData, setAllData] = useState({});
+  const [allData, setAllData] = useState<Record<string, any>>({});
   const [update, setUpdate] = useState<boolean>(false);
   const [authUser, setAuthUser] = useState<boolean>(false);
   const [loginFormData, setLoginFormData] =
-    useState<FormDataValue>(initialLoginFormData);
-
+    useState<FormDataValue>(initialLoginFormData);  
+  
   const menuItems = [
     {
       id: "home",
@@ -140,7 +140,7 @@ const AdminView = () => {
     {
       id: "contact",
       label: "Contact",
-      component: <AdminContactView key={"contact"} />,
+      component: <AdminContactView key={"contact"} data={allData && allData?.contact} />,
     },
   ];
 

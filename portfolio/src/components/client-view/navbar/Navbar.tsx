@@ -103,9 +103,18 @@ const Navbar: React.FC = () => {
             />
           </ul>
           <div className="col-start-10 col-end-12 font-medium flex justify-center items-center">
-            <button className="hidden lg:block rounded-lg 2xl:text-2xl lg:text-lg text-xl text-[#000] px-6 py-3 border-[2px] cursor-pointer border-green-600 bg-[#fff] tracking-widest hover:bg-green-600 hover:text-[#fff] transition-all outline-none">
-              Contact Me
-            </button>
+            <LinkScroll
+              to="contact"
+              spy={true}
+              smooth={true}
+              duration={1000}
+              onSetActive={() => setActiveLink("contact")}
+              onClick={() => setActiveLink("contact")}
+            >
+              <button className="hidden lg:block rounded-lg 2xl:text-2xl lg:text-lg text-xl text-[#000] px-6 py-3 border-[2px] cursor-pointer border-green-600 bg-[#fff] tracking-widest hover:bg-green-600 hover:text-[#fff] transition-all outline-none">
+                Contact Me
+              </button>
+            </LinkScroll>
           </div>
         </nav>
       </header>

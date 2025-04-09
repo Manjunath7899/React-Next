@@ -30,7 +30,7 @@ const ClientProjectView: React.FC<ClientProjectViewProps> = ({ data }) => {
             })}
           </h1>
         </div>
-        <div className="mt-24 flex justify-start gap-8 row-start-2 ml-60 flex-wrap">
+        <div className="mt-24 flex justify-center mr-39 gap-8 row-start-2 ml-60 flex-wrap">
           {data.map((item, index) => {
             return (
               <div

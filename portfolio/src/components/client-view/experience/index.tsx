@@ -9,7 +9,6 @@ interface ClientExperieanceAndEducationView {
 const ClientExperieanceAndEducationView: React.FC<
   ClientExperieanceAndEducationView
 > = ({ experienceData, educationData }) => {
-  console.log(experienceData, 567890);
 
   const myExperienceHeadingText = "My Experince";
   const myEducationHeadingText = "My Education";

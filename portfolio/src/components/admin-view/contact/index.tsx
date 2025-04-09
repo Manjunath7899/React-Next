@@ -1,9 +1,21 @@
 import React from "react";
 
-const AdminContactView = () => {
+interface AdminContactViewProps {
+  data: any[];
+}
+
+const AdminContactView: React.FC<AdminContactViewProps> = ({data}) => {
   return (
-    <div>
-      <h1>AdminContactView</h1>
+    <div className="flex flex-col gap-5">
+      {data && data.length
+        ? data.map((item) => (
+            <div className="p-5 border">
+              <p>{item.name}</p>
+              <p>{item.email}</p>
+              <p>{item.message}</p>
+            </div>
+          ))
+        : null}
     </div>
   );
 };
