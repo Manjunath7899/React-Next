@@ -43,15 +43,11 @@ const socialIcons: any[] = [
   },
   {
     id: "instagram",
-    icon: (
-      <FaInstagram color="#E1306C" className="w-[40px] h-[40px]" />
-    ),
+    icon: <FaInstagram color="#E1306C" className="w-[40px] h-[40px]" />,
   },
   {
     id: "github",
-    icon: (
-      <FaGithub color="#181717" className="w-[40px] h-[40px]" />
-    ),
+    icon: <FaGithub color="#181717" className="w-[40px] h-[40px]" />,
   },
 ];
 
@@ -60,7 +56,7 @@ const ClientHomeView: React.FC<ClientHomeViewProps> = ({ data }) => {
   const containerRef = useRef(null);
 
   return (
-    <div className="max-w-screen xl mt-24 px-8 xl:px-36 max-auto id:home">
+    <div className="max-w-screen xl mt-24 px-8 xl:px-36 max-auto" id="home">
       <AnimationWrapper>
         <motion.div
           variants={setVarients}

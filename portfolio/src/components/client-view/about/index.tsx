@@ -80,6 +80,7 @@ const ClientAboutView: React.FC<ClientAboutViewProps> = ({ data }) => {
             {headingText.split(" ").map((item, index) => {
               return (
                 <span
+                  key={index}
                   className={`${
                     index === item.length - 1 ? "text-green-600" : "text-[#000]"
                   }`}

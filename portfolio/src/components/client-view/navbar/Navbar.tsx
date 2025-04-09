@@ -25,10 +25,6 @@ const menuItems = [
     label: "Experience",
   },
   {
-    id: "education",
-    label: "Education",
-  },
-  {
     id: "project",
     label: "Project",
   },

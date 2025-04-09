@@ -22,12 +22,13 @@ const ClientExperieanceAndEducationView: React.FC<
       <div className="grid grid-flow-col grid-cols-1">
         <div className="flex flex-row justify-evenly row-start-2">
           <div className="flex flex-col gap-8">
-            <div>
+            <div className="ml-12 mb-10">
               {myExperienceHeadingText
                 .split(" ")
                 .map((item: string, index: number) => {
                   return (
                     <span
+                      key={index}
                       className={`${
                         index === 1 ? "text-green-600" : "text-[#000000]"
                       } text-5xl font-medium`}
@@ -37,27 +38,32 @@ const ClientExperieanceAndEducationView: React.FC<
                   );
                 })}
             </div>
-            <div className="w-100 h-auto border-2 border-green-600 rounded-lg">
+            <div className="flex flex-col gap-10">
               {experienceData?.map((item, index) => {
                 return (
-                  <div className="flex flex-col gap-1.5 p-5 font-bold text-[18px]">
-                    <p className="">{item.duration}</p>
-                    <p>
+                  <div
+                    key={index}
+                    className="flex flex-col border-2 border-green-600 w-100 h-auto rounded-lg p-5"
+                  >
+                    <p className="font-bold text-[18px]">{item.duration}</p>
+                    <p className="font-bold text-[18px]">
                       {item.company}, {item.location}
                     </p>
-                    <p>{item.position}</p>
+                    <p className="font-bold text-[18px]">{item.position}</p>
+                    <p className="text-[18px]">{item.jobprofile}</p>
                   </div>
                 );
               })}
             </div>
           </div>
           <div className="flex flex-col gap-8">
-            <div>
+            <div className="ml-12 mb-10">
               {myEducationHeadingText
                 .split(" ")
                 .map((item: string, index: number) => {
                   return (
                     <span
+                      key={index}
                       className={`${
                         index === 1 ? "text-green-600" : "text-[#000000]"
                       } text-5xl font-medium`}
@@ -67,15 +73,16 @@ const ClientExperieanceAndEducationView: React.FC<
                   );
                 })}
             </div>
-            <div className="w-100 h-auto border-2 border-green-600 rounded-lg">
-              {experienceData?.map((item, index) => {
+            <div className="flex flex-col gap-10">
+              {educationData?.map((item, index) => {
                 return (
-                  <div className="flex flex-col gap-1.5 p-5 font-bold text-[18px]">
-                    <p className="">{item.duration}</p>
-                    <p>
-                      {item.company}, {item.location}
-                    </p>
-                    <p>{item.position}</p>
+                  <div
+                    key={index}
+                    className="flex flex-col border-2 border-green-600 w-100 h-auto rounded-lg p-5"
+                  >
+                    <p className="text-[18px] font-bold">{item.degree}</p>
+                    <p className="text-[18px] font-bold">{item.college}</p>
+                    <p className="text-[18px] font-bold">{item.year}</p>
                   </div>
                 );
               })}
