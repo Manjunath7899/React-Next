@@ -10,11 +10,11 @@ const ClientProjectView: React.FC<ClientProjectViewProps> = ({ data }) => {
   const projectHeadingText = "My Projects";
   return (
     <div
-      className="max-w-screen-2xl mt-24 mb-6 px-6 max-auto ml-30"
+      className="max-w-screen-2xl mt-24 max-sm:mt-12 mb-6 px-6 max-auto ml-30 max-sm:ml-23"
       id="project"
     >
       <div className="w-full grid grid-flow-row grid-row-2">
-        <div className="flex justify-center items-center">
+        <div className="flex max-sm:mr-45 justify-center items-center">
           <h1>
             {projectHeadingText.split(" ").map((item: any, index: number) => {
               return (
@@ -22,7 +22,7 @@ const ClientProjectView: React.FC<ClientProjectViewProps> = ({ data }) => {
                   key={index}
                   className={`${
                     index === 1 ? "text-green-600" : "text-[#000000]"
-                  } text-5xl font-medium`}
+                  } text-5xl max-sm:text-3xl font-medium`}
                 >
                   {item}{" "}
                 </span>
@@ -30,12 +30,12 @@ const ClientProjectView: React.FC<ClientProjectViewProps> = ({ data }) => {
             })}
           </h1>
         </div>
-        <div className="mt-24 flex justify-center mr-39 gap-8 row-start-2 ml-60 flex-wrap">
+        <div className="mt-24 max-sm:mt-10 flex justify-center max-sm:ml-0 mr-39 gap-8 row-start-2 ml-60 flex-wrap">
           {data.map((item, index) => {
             return (
               <div
                 key={index}
-                className="rounded-lg w-[300px] h-[350px] p-5 border-2 border-green-600 relative"
+                className="rounded-lg w-[300px] h-[350px] max-sm:h-[300px] p-5 border-2 border-green-600 relative"
               >
                 <p className="text-2xl font-bold">{item.name}</p>
                 <p className="text-md ">{item.createdAt.split("T")[0]}</p>

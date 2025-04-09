@@ -36,18 +36,22 @@ const socialIcons: any[] = [
   {
     id: "facebook",
     icon: <FaFacebookF color="#1877F2" className="w-[40px] h-[40px]" />,
+    url: "https://www.facebook.com/manjunath.venktesh"
   },
   {
     id: "linkedId",
     icon: <FaLinkedinIn color="#0077B5" className="w-[40px] h-[40px]" />,
+    url: "https://www.linkedin.com/in/manjunath-v-071029195/"
   },
   {
     id: "instagram",
     icon: <FaInstagram color="#E1306C" className="w-[40px] h-[40px]" />,
+    url: "https://www.instagram.com/manjunathvenkte/?hl=en"
   },
   {
     id: "github",
     icon: <FaGithub color="#181717" className="w-[40px] h-[40px]" />,
+    url: "https://github.com/Manjunath7899",
   },
 ];
 
@@ -56,11 +60,11 @@ const ClientHomeView: React.FC<ClientHomeViewProps> = ({ data }) => {
   const containerRef = useRef(null);
 
   return (
-    <div className="max-w-screen xl mt-24 px-8 xl:px-36 max-auto" id="home">
+    <div className="max-w-screen xl mt-24 px-8 xl:px-36 max-auto sm:overflow-x-hidden" id="home">
       <AnimationWrapper>
         <motion.div
           variants={setVarients}
-          className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16 ml-16"
+          className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 max-sm:gap-10 py-6 sm:py-16 ml-16"
         >
           <div className="flex flex-col justify-center items-start row-start-2 sm:row-start-1">
             <motion.h1
@@ -71,7 +75,7 @@ const ClientHomeView: React.FC<ClientHomeViewProps> = ({ data }) => {
                 damping: 20,
                 duration: 0.3,
               }}
-              className="mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium leading-normal"
+              className="mb-4 text-3xl lg:text-4xl xl:text-5xl max-sm:text-2xl font-medium leading-normal"
             >
               {data && data.length
                 ? data[0]?.heading
@@ -98,7 +102,7 @@ const ClientHomeView: React.FC<ClientHomeViewProps> = ({ data }) => {
                 damping: 20,
                 duration: 0.3,
               }}
-              className="text-[#000] mt-4 mb-8 font-bold text-[20px]"
+              className="text-[#000] mt-4 mb-8 max-sm:mb-6 font-bold text-[20px] max-sm:text-[16px]"
             >
               {data && data.length ? data[0]?.summary : null}
             </motion.p>
@@ -133,6 +137,7 @@ const ClientHomeView: React.FC<ClientHomeViewProps> = ({ data }) => {
                         rotate: -360,
                         borderRadius: "100%",
                       }}
+                      onClick={() => window.open(item.url, "_blank")}
                     >
                       {item.icon}
                     </motion.div>

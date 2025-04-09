@@ -28,21 +28,21 @@ const ClientAboutView: React.FC<ClientAboutViewProps> = ({ data }) => {
   const headingText = "Why Hire Me For Your Next Project ?";
 
   return (
-    <div className="max-w-screen mt-24 mb-6 px-6 lg:px-40 max-auto" id="about">
+    <div className="max-w-screen mt-24 max-sm:mt-0 mb-6 max-sm:mb-0 px-6 lg:px-40 max-auto" id="about">
       <div className="w-full flex">
         <AnimationWrapper className="rounded-lg w-full grid grid-flow-row grid-cols-1">
-          <div className="w-full flex flex-row divide-x-2 divide-green-600 justify-between">
+          <div className="w-full flex max-sm:flex-col flex-row divide-x-2 divide-green-600 max-sm:divide-y-2 max-sm:divide-x-0 justify-between">
             {aboutDataInfo.map((aboutInfoItem, index) => {
               return (
                 <motion.div
                   key={index}
                   className={`${
                     index === 0
-                      ? "justify-start"
+                      ? "justify-start max-sm:justify-center"
                       : index === 1
-                      ? "justify-center"
+                      ? "justify-center max-sm:justify-center"
                       : "justify-end"
-                  } flex-1 flex justify-center items-center px-6 text-center`}
+                  } flex-1 flex justify-center items-center px-6 text-center max-sm:justify-center`}
                 >
                   <div className="flex flex-col">
                     <motion.p
@@ -52,7 +52,7 @@ const ClientAboutView: React.FC<ClientAboutViewProps> = ({ data }) => {
                         type: "spring",
                         duration: 0.5,
                       }}
-                      className="text-[50px] text-green-600 font-bold"
+                      className="text-[50px] max-sm:text-[35px] text-green-600 font-bold"
                     >
                       {aboutInfoItem.value}+
                     </motion.p>
@@ -63,7 +63,7 @@ const ClientAboutView: React.FC<ClientAboutViewProps> = ({ data }) => {
                         type: "spring",
                         duration: 0.5,
                       }}
-                      className="text-[50px] text-back font-bold"
+                      className="text-[50px] max-sm:text-[35px] text-back font-bold"
                     >
                       {aboutInfoItem.label}
                     </motion.p>
@@ -74,9 +74,9 @@ const ClientAboutView: React.FC<ClientAboutViewProps> = ({ data }) => {
           </div>
         </AnimationWrapper>
       </div>
-      <AnimationWrapper className="mt-12 pt-12">
+      <AnimationWrapper className="mt-12 max-sm:mt-6 pt-12">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="leading-[70px] mb-4 text-3xl lg:text-4xl xl:text-5xl font-medium">
+          <h1 className="leading-[70px] mb-4 max-sm:mb-0 text-3xl lg:text-4xl max-sm:text-2xl xl:text-5xl font-medium">
             {headingText.split(" ").map((item, index) => {
               return (
                 <span
@@ -90,14 +90,14 @@ const ClientAboutView: React.FC<ClientAboutViewProps> = ({ data }) => {
               );
             })}
           </h1>
-          <p className="text-[#000] mt-4 mb-8 font-bold text-2xl">
+          <p className="text-[#000] mt-4 max-sm:mt-0 mb-8 font-bold text-2xl max-sm:text-lg">
             {data[0]?.aboutme}
           </p>
         </div>
       </AnimationWrapper>
       <div className="max-w-screen-lg grid grid-flow-row grid-cols-1 ml-[12%]">
-        <AnimationWrapper className="flex justify-center items-center w-full gap-10">
-          <motion.div className="h-full w-full p-4">
+        <AnimationWrapper className="flex max-sm:flex-col justify-center items-center w-full gap-10">
+          <motion.div className="h-full w-full p-4 max-sm:hidden">
             <Image
               src={aboutImage}
               alt="About Me"
@@ -107,11 +107,11 @@ const ClientAboutView: React.FC<ClientAboutViewProps> = ({ data }) => {
               className="object-cover"
             />
           </motion.div>
-          <motion.div className="flex justify-center items-center gap-5">
+          <motion.div className="flex justify-center items-center gap-5 max-sm:gap-3 max-sm:mr-20">
             {data[0]?.skills.split(",").map((skillItem: any, index: number) => {
               return (
                 <motion.div key={index} className="w-full flex flex-wrap justify-center items-center">
-                  <button className="bg-white border-2 rounded-lg border-green-600 px-6 py-3 cursor-pointer font-semibold text-2xl">
+                  <button className="bg-white border-2 rounded-lg border-green-600 px-6 max-sm:px-3 max-sm:py-2 py-3 cursor-pointer font-semibold text-2xl max-sm:text-lg">
                     {skillItem}
                   </button>
                 </motion.div>

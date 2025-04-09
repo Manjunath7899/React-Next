@@ -152,6 +152,7 @@ const Navbar: React.FC = () => {
                 activeLink={activeLink}
                 setActiveLink={(newActiveLink) => {
                   setActiveLink(newActiveLink);
+                  setMobileMenuOpen(false);
                 }}
                 getMenuItems={menuItems}
               />
