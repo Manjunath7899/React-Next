@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import ClientAboutView from "@/components/client-view/about";
 import ClientContactView from "@/components/client-view/contact";
 import ClientExperieanceAndEducationView from "@/components/client-view/experience";

@@ -59,7 +59,7 @@ export async function login(formData: FormDataValue) {
 export async function extractAllData(currentSection: string) {
   try {
     const apiResponse = await fetch(
-      `http://localhost:3000/api/${currentSection}/get`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/${currentSection}/get`,
       {
         method: "GET",
         cache: "no-store",
